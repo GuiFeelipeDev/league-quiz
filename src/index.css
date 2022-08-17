@@ -1,13 +1,349 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;0,700;1,500&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+:root {
+  --headerColor: rgba(109, 109, 109, 0.5);
+  --buttonColor: #db4545;
+  --containerWidth: 85%;
+  --backgroundDefault: #0a0505;
+  --detailsColor: #232323;
+  --borderColor: #a3a3a3;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*=======HEADER===========*/
+.header-main {
+  width: 100%;
+  height: 100px;
+  background-color: var(--headerColor);
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-content {
+  width: var(--containerWidth);
+  display: flex;
+  justify-content: space-between;
+}
+.header-half {
+  width: 40%;
+  height: inherit;
+  display: flex;
+  justify-content: flex-end;
+}
+.header-opts {
+  display: flex;
+  gap: 60px;
+}
+.nav-opt {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  color: #fff;
+  z-index: 999;
+}
+.header-button {
+  width: 160px;
+  min-width: 120px;
+  height: 58px;
+  border-radius: 50px;
+  font-size: 26px;
+  background-color: var(--buttonColor);
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+.site-logo {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+/*=======HEADER===========*/
+/*=======HOME===========*/
+.banner-image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+.banner-info {
+  width: var(--containerWidth);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+}
+.banner-name {
+  font-size: 80px;
+  font-weight: 500;
+  margin-top: 200px;
+}
+.banner-title {
+  text-transform: capitalize;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.banner-blurb {
+  max-width: 55%;
+}
+.bottom-tri {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 20px solid #fff;
+}
+/*=======HOME===========*/
+/*=======SLIDER===========*/
+.slider-main {
+  width: 100%;
+  height: 820px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.active-slide {
+  width: 950px;
+  height: 580px;
+  object-fit: cover;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.style-base {
+  width: 1200px;
+  height: 820px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-slide {
+  width: 1000px;
+  object-fit: cover;
+  position: absolute;
+  margin-right: -100px;
+  height: 560px;
+  opacity: 70%;
+  z-index: 1;
+  transition: 0.3s;
+}
+.prev-slide {
+  width: 1000px;
+  object-fit: cover;
+  position: absolute;
+  margin-left: -100px;
+  height: 560px;
+  opacity: 70%;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.default-slide {
+  display: none;
+}
+.center-image {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 720px;
+}
+
+@media (max-width: 1281px) {
+  .style-base {
+    width: 1100px;
+    height: 600px;
+  }
+  .next-slide,
+  .prev-slide {
+    width: 800px;
+    height: 500px;
+  }
+  .active-slide {
+    width: 750px;
+    height: 520px;
+  }
+  .center-image {
+    width: 900px;
+  }
+  .center {
+    height: 624px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .style-base {
+    width: 900px;
+    height: 500px;
+  }
+  .next-slide,
+  .prev-slide {
+    width: 600px;
+    height: 400px;
+  }
+  .active-slide {
+    width: 550px;
+    height: 420px;
+  }
+  .center-image {
+    width: 700px;
+  }
+  .center {
+    height: 524px;
+  }
+}
+/*=======SLIDER===========*/
+/*=======LORE===========*/
+.lore-background {
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://blog.turtlebeach.com/wp-content/uploads/2022/05/League-of-Legends-Poster.jpeg");
+  position: absolute;
+}
+.lore-style {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lore-main {
+  width: var(--containerWidth);
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.lore-title {
+  font-size: 70px;
+  color: #fff;
+}
+.lore-paragraph {
+  font-size: 36px;
+  max-width: 80%;
+  text-align: center;
+  font-weight: 200;
+}
+@media (max-width: 1400px) {
+  .lore-paragraph {
+    font-size: 32px;
+  }
+}
+@media (max-width: 1200px) {
+  .lore-paragraph {
+    font-size: 24px;
+  }
+}
+/*=======LORE===========*/
+/*=======ABILITIES===========*/
+.abilities-section {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--backgroundDefault);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.abilities-container {
+  width: var(--containerWidth);
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.skills-icons {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  max-width: 64px;
+  justify-content: space-around;
+}
+.abilities-title {
+  font-size: 64px;
+}
+.desc-box {
+  width: 60%;
+  height: 70%;
+  background-color: var(--detailsColor);
+  box-shadow: 5px 5px 2px var(--buttonColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+.desc-content {
+  width: 90%;
+  height: 85%;
+}
+.desc-content h2 {
+  font-size: 38px;
+}
+.desc-content p {
+  font-size: 26px;
+  font-weight: 200;
+}
+.skill-active {
+  scale: 1.4;
+  border-radius: 50%;
+  border: 1px solid rgb(196, 196, 196);
+}
+.skills-icons img {
+  cursor: pointer;
+  transition: 0.4s;
+}
+@media (max-width: 1400px) {
+  .desc-content p {
+    font-size: 22px;
+  }
+}
+/*=======ABILITIES===========*/
+/*========FOOTER==========*/
+.footer-section {
+  width: 100%;
+  background-color: var(--backgroundDefault);
+  border-top: 1px solid var(--borderColor);
+  display: flex;
+  justify-content: center;
+}
+.footer-content {
+  width: var(--containerWidth);
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content a {
+  color: var(--buttonColor);
 }
