@@ -7,6 +7,6 @@ export const titles = {
 
 export const navOpts = [
   { title: "Home", link: routesData.home },
-  { title: "Champions", link: "" },
-  { title: "Info", link: "" },
+  { title: "Champions", link: routesData.champions },
+  { title: "About", link: routesData.about },
 ]

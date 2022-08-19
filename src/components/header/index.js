@@ -10,7 +10,12 @@ const Index = () => {
         <section className="header-main">
           <article className="header-content">
             <div>
-              <h1 className="site-logo">{titles.main}</h1>
+              <h1
+                className="site-logo"
+                onClick={() => navigate(navOpts[0].link)}
+              >
+                {titles.main}
+              </h1>
             </div>
             <div className="header-half header-opts">
               {navOpts.map((option, index) => {

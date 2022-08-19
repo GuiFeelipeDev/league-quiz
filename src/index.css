@@ -65,6 +65,7 @@
   font-size: 40px;
   font-weight: 700;
   color: #fff;
+  cursor: pointer;
 }
 /*=======HEADER===========*/
 /*=======HOME===========*/
@@ -320,9 +321,24 @@
   border-radius: 50%;
   border: 1px solid rgb(196, 196, 196);
 }
+.icon-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-div p {
+  position: absolute;
+  transition: 0.5s;
+}
+.skill-p {
+  margin-left: 160px;
+  font-size: 32px;
+  font-weight: bold;
+}
 .skills-icons img {
   cursor: pointer;
   transition: 0.4s;
+  z-index: 1;
 }
 @media (max-width: 1400px) {
   .desc-content p {
@@ -345,5 +361,44 @@
   justify-content: space-between;
 }
 .footer-content a {
+  color: var(--buttonColor);
+}
+/*========FOOTER==========*/
+/*========ABOUT==========*/
+.about-section {
+  width: 100%;
+  background-color: var(--backgroundDefault);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 80px;
+}
+.about-section h1 {
+  margin-top: 140px;
+  font-size: 60px;
+}
+.about-container {
+  width: 70%;
+  margin-bottom: 30px;
+}
+.about-container h2 {
+  color: var(--buttonColor);
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.about-container p {
+  text-indent: 2em;
+  font-weight: 200;
+  font-size: 24px;
+}
+.about-container ul {
+  margin-left: 60px;
+}
+.about-container li {
+  font-weight: 200;
+  font-size: 24px;
+}
+.about-container a {
   color: var(--buttonColor);
 }

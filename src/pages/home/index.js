@@ -4,13 +4,20 @@ import Header from "../../components/header/"
 import Slider from "../../components/Slider"
 import { titles } from "./data"
 import Footer from "../../components/footer"
+
 const Index = () => {
   const [champ, setChamp] = React.useState("")
   const [champData, setChampData] = React.useState("")
   const [skinsQnt, setSkinsQnt] = React.useState([])
   const [spells, setSpells] = React.useState([])
   const [activeSpell, setActiveSpell] = React.useState({ title: "", desc: "" })
-  const [active, setActive] = React.useState(["skill-active", "", "", "", ""])
+  const [active, setActive] = React.useState([
+    { skill: "P", skillClass: "skill-active", skillTxt: "skill-p" },
+    { skill: "Q", skillClass: "", skillTxt: "" },
+    { skill: "W", skillClass: "", skillTxt: "" },
+    { skill: "E", skillClass: "", skillTxt: "" },
+    { skill: "R", skillClass: "", skillTxt: "" },
+  ])
   const getChampion = async () => {
     const champs = await getRandomChampion()
     setChampData(champs)
@@ -119,16 +126,30 @@ const Index = () => {
           <div className="skills-icons">
             {spells?.map((spell, index) => {
               const activeBtn = (index) => {
-                let holder = ["", "", "", "", ""]
-                holder[index] = "skill-active"
+                let holder = [
+                  {
+                    skill: "P",
+                    skillClass: "",
+                    skillTxt: "",
+                  },
+                  { skill: "Q", skillClass: "", skillTxt: "" },
+                  { skill: "W", skillClass: "", skillTxt: "" },
+                  { skill: "E", skillClass: "", skillTxt: "" },
+                  { skill: "R", skillClass: "", skillTxt: "" },
+                ]
+                holder[index].skillClass = "skill-active"
+                holder[index].skillTxt = "skill-p"
                 setActive(holder)
               }
               return (
-                <div key={index}>
+                <div key={index} className="icon-div">
+                  <p className={active[index].skillTxt}>
+                    {active[index].skill}
+                  </p>
                   <img
                     src={`http://ddragon.leagueoflegends.com/cdn/12.15.1/img/${spell["image"].group}/${spell["image"].full}`}
                     alt={spell.id}
-                    className={active[index]}
+                    className={active[index].skillClass}
                     onClick={() => {
                       setSpell(spell.name, spell.description)
                       activeBtn(index)
