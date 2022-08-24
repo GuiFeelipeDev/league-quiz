@@ -402,3 +402,123 @@
 .about-container a {
   color: var(--buttonColor);
 }
+/*=======Champions Page===========*/
+.champions-section {
+  background-color: var(--backgroundDefault);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.champions-main {
+  width: var(--containerWidth);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.champions-main h1 {
+  margin-top: 140px;
+  font-size: 60px;
+}
+
+/*=======Search Bar===========*/
+.search-base {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 20px;
+  border-radius: 50px;
+}
+.search-input {
+  height: 30px;
+  border: none;
+  color: #000;
+  font-size: 20px;
+  width: 100%;
+}
+.search-input:focus {
+  border: none;
+  outline: none;
+}
+.search-button {
+  background-color: var(--buttonColor);
+  width: 120px;
+  border: none;
+  height: 60px;
+  font-size: 40px;
+  padding-top: 5px;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+}
+.search-base form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-main {
+  background: none;
+  border: none;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.card-section {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.card-main {
+  width: 308px;
+  height: 560px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.card-style {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(transparent, black);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.card-main img {
+  position: absolute;
+}
+.card-main h2 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 100px;
+  font-size: 28px;
+  transition: 0.5s;
+}
+.classes {
+  z-index: 2;
+  position: absolute;
+  margin-bottom: 130px;
+  font-size: 0;
+  transition: 0.5s;
+  text-transform: capitalize;
+  display: flex;
+}
+
+.card-main:hover h2 {
+  margin-bottom: 200px;
+}
+.card-main:hover .classes {
+  font-size: 18px;
+}
