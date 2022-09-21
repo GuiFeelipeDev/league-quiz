@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,500;0,700;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,700;1,500&display=swap");
 
 * {
   margin: 0;
@@ -9,6 +9,7 @@
 :root {
   --headerColor: rgba(109, 109, 109, 0.5);
   --buttonColor: #db4545;
+  --buttonHover: #b43d3d;
   --containerWidth: 85%;
   --backgroundDefault: #0a0505;
   --detailsColor: #232323;
@@ -60,6 +61,9 @@
   border: none;
   cursor: pointer;
   color: #fff;
+}
+.header-button:hover {
+  background-color: var(--buttonHover);
 }
 .site-logo {
   font-size: 40px;
@@ -521,4 +525,72 @@
 }
 .card-main:hover .classes {
   font-size: 18px;
+}
+
+.quiz-background {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://i.pinimg.com/originals/50/05/7d/50057dc2df5e0503d5de6f55b6a6df0b.jpg);
+  position: absolute;
+}
+
+.quiz-background-style {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10%;
+}
+
+.quiz-header {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-header-content {
+  width: var(--containerWidth);
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.question-section {
+  width: 50%;
+  min-width: 360px;
+  min-height: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.enunciate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.alternatives {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.question-enunciate {
+  font-size: 26px;
+}
+
+.question-paragraph {
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: center;
 }

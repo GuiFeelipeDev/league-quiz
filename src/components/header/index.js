@@ -29,7 +29,12 @@ const Index = () => {
                   </button>
                 )
               })}
-              <button className="header-button">{titles.button}</button>
+              <button
+                className="header-button"
+                onClick={() => navigate("/quiz")}
+              >
+                {titles.button}
+              </button>
             </div>
           </article>
         </section>

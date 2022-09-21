@@ -2484,6 +2484,11 @@ array-includes@^3.1.4, array-includes@^3.1.5:
     get-intrinsic "^1.1.1"
     is-string "^1.0.7"
 
+array-shuffle@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/array-shuffle/-/array-shuffle-3.0.0.tgz#9a927cc2ca4c8ef4d71cddef7c9ee7b3b733d54b"
+  integrity sha512-rogEGxHOQPhslOhpg12LJkB+bbAl484/s2AJq0BxtzQDQfKl76fS2u9zWgg3p3b9ENcuvE7K8A7l5ddiPjCRnw==
+
 array-union@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/array-union/-/array-union-2.1.0.tgz#b798420adbeb1de828d84acd8a2e23d3efe85e8d"
@@ -7336,6 +7341,11 @@ react-scripts@5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-string-replace@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-string-replace/-/react-string-replace-1.1.0.tgz#a3f7b458e697e77d70b0ea663caf38ab38f7cc17"
+  integrity sha512-N6RalSDFGbOHs0IJi1H611WbZsvk3ZT47Jl2JEXFbiS3kTwsdCYij70Keo/tWtLy7sfhDsYm7CwNM/WmjXIaMw==
 
 react@^18.2.0:
   version "18.2.0"
