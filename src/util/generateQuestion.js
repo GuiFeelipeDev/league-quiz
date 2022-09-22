@@ -1,16 +1,20 @@
 import { championData, getRandomChampion } from "./index"
 import reactStringReplace from "react-string-replace"
 
-const fillOptions = async (temp, name) => {
+const sortChamp = async (name) => {
   let champs = await championData()
   champs = Object.values(champs)
+  const min = Math.ceil(0)
+  const max = Math.floor(champs.length - 1)
+  const rndNum = Math.floor(Math.random() * (max - min) + min)
+  const champion = champs[rndNum]
+  if (champion.name === name) sortChamp(name)
+  return champion.name
+}
+
+const fillOptions = async (temp, name) => {
   for (let i = 0; i < 3; i++) {
-    const min = Math.ceil(0)
-    const max = Math.floor(champs.length - 1)
-    const rndNum = Math.floor(Math.random() * (max - min) + min)
-    const champion = champs[rndNum]
-    temp = [...temp, champion.name]
-    if (champion.name === name) i--
+    temp = [...temp, await sortChamp(name)]
   }
   return temp
 }
@@ -99,6 +103,8 @@ export const createQstData = async () => {
       break
     case 3:
       tempQuest = skillQuestion()
+      break
+    default:
       break
   }
   return tempQuest

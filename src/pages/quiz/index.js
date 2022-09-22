@@ -2,13 +2,15 @@ import arrayShuffle from "array-shuffle"
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import { createQstData } from "../../util/generateQuestion"
-
+import Modal from "../../components/incorrectsModal"
 const Index = () => {
   let navigate = useNavigate()
   const [quizData, setQuizData] = React.useState()
   const [activeQuestion, setActiveQuestion] = React.useState(0)
   const [correctAnswers, setCorrectAnswers] = React.useState(0)
+  const [incorrectAns, setIncorrectAns] = React.useState([])
   const [result, setResult] = React.useState(false)
+  const [modalOpen, setModalOpen] = React.useState(false)
   const getQuestion = async () => {
     let questionData = []
     for (let i = 0; i < 5; i++) {
@@ -20,9 +22,19 @@ const Index = () => {
   const questionSub = (resp) => {
     if (resp === quizData[activeQuestion].correctAns) {
       setCorrectAnswers(correctAnswers + 1)
+    } else {
+      setIncorrectAns([
+        ...incorrectAns,
+        {
+          enunciate: quizData[activeQuestion].enunciate,
+          question: quizData[activeQuestion].question,
+          correctAns: quizData[activeQuestion].correctAns,
+        },
+      ])
     }
     if (activeQuestion === quizData.length - 1) {
       setResult(true)
+      console.log(incorrectAns)
       return
     }
     setActiveQuestion(activeQuestion + 1)
@@ -32,6 +44,7 @@ const Index = () => {
   }, [])
   return (
     <>
+      {modalOpen && <Modal data={incorrectAns} setModalOpen={setModalOpen} />}
       <div className="quiz-background"></div>
       <div className="quiz-background-style">
         <div className="quiz-header">
@@ -50,12 +63,28 @@ const Index = () => {
               display: "flex",
               alignItems: "center",
               flexDirection: "column",
+              minHeight: "400px",
+              justifyContent: "space-around",
             }}
           >
             <h1 style={{ fontSize: "60px" }}>Congratulations</h1>
             <h2>
               Your final score is: {`0${correctAnswers}/0${quizData.length}`}
             </h2>
+            {incorrectAns.length > 0 && (
+              <button
+                className="header-button"
+                onClick={() => setModalOpen(true)}
+              >
+                Incorrects
+              </button>
+            )}
+            <button
+              className="header-button"
+              onClick={() => window.location.reload()}
+            >
+              Play Again
+            </button>
           </div>
         ) : (
           quizData && (
